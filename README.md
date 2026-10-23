@@ -20,6 +20,8 @@ El repositorio incluye `.github/workflows/pages.yml`. Al subir la rama `main`, a
 
 Las miniaturas se extrajeron de `design/reference.png`. El retrato y los productos se recrearon en alta resolución a partir de la referencia para ampliar el encuadre y eliminar las etiquetas de la marca anterior. Los archivos maestros están en `design/`; la página solo descarga las versiones WebP de `assets/`. Para regenerarlas:
 
+El logo de `assets/aurum-logo.png` es un recorte sin redibujo de `design/aurum-logo-original.png`, proporcionado por el usuario. Se mantiene su forma y tipografía originales.
+
 ```powershell
 & 'C:\Users\Jhon\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' scripts/optimize_images.py
 ```

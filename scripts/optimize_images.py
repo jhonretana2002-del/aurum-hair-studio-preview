@@ -32,3 +32,8 @@ for source_name, filename, size in (
         image = master.convert("RGB").resize(size, Image.Resampling.LANCZOS)
         image.save(OUTPUT / filename, "WEBP", quality=80, method=6)
         print(f"{filename}: {(OUTPUT / filename).stat().st_size / 1024:.1f} KiB")
+
+# El logo se conserva sin redibujarlo ni recomprimir sus detalles.
+with Image.open(ROOT / "design" / "aurum-logo-original.png") as logo:
+    logo.convert("RGB").crop((88, 137, 325, 279)).save(OUTPUT / "aurum-logo.png", optimize=True)
+    print(f"aurum-logo.png: {(OUTPUT / 'aurum-logo.png').stat().st_size / 1024:.1f} KiB")
