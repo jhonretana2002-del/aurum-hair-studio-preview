@@ -1,7 +1,7 @@
 """Genera los recursos web ligeros a partir de la referencia proporcionada."""
 
 from pathlib import Path
-from PIL import Image
+from PIL import Image, ImageFilter
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "design" / "reference.png"
@@ -24,14 +24,17 @@ with Image.open(SOURCE) as source:
         image.save(OUTPUT / filename, "WEBP", quality=quality, method=6)
         print(f"{filename}: {(OUTPUT / filename).stat().st_size / 1024:.1f} KiB")
 
-for source_name, filename, size in (
-    ("panorama-master.png", "hero-panorama.webp", (1983, 793)),
-    ("panorama-master.png", "hero-panorama-small.webp", (1000, 400)),
-):
-    with Image.open(ROOT / "design" / source_name) as master:
-        image = master.convert("RGB").resize(size, Image.Resampling.LANCZOS)
-        image.save(OUTPUT / filename, "WEBP", quality=82 if size[0] > 1000 else 80, method=6)
-        print(f"{filename}: {(OUTPUT / filename).stat().st_size / 1024:.1f} KiB")
+with Image.open(ROOT / "design" / "panorama-master.png") as master:
+    panorama = master.convert("RGB")
+    panorama.save(OUTPUT / "hero-panorama.webp", "WEBP", quality=82, method=6)
+    print(f"hero-panorama.webp: {(OUTPUT / 'hero-panorama.webp').stat().st_size / 1024:.1f} KiB")
+
+    # Preserve the master's full height on phones. The previous 1000 x 400
+    # panorama had to be enlarged heavily to fill the portrait-shaped hero.
+    mobile = panorama.crop((250, 0, 1450, 793))
+    mobile = mobile.filter(ImageFilter.UnsharpMask(radius=0.8, percent=80, threshold=2))
+    mobile.save(OUTPUT / "hero-panorama-small.webp", "WEBP", quality=88, method=6)
+    print(f"hero-panorama-small.webp: {(OUTPUT / 'hero-panorama-small.webp').stat().st_size / 1024:.1f} KiB")
 
 # Elimina solo el fondo negro; el arte y la tipografía originales permanecen.
 with Image.open(ROOT / "design" / "aurum-logo-original.png") as logo:
