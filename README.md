@@ -14,7 +14,7 @@ Desde la carpeta del proyecto:
 
 Abre `http://localhost:8000/`. También puede servirse con cualquier servidor estático.
 
-Para revisar la propuesta de videos verticales, abre `http://localhost:8000/?preview=videos#video-preview`. Esta vista muestra imágenes ilustrativas de formato 9:16; todavía no contiene videos reproducibles. Las tres imágenes WebP suman aproximadamente 105 KB y solo se solicitan cuando se abre la propuesta.
+La sección «Aurum en movimiento» forma parte de la página principal. Muestra imágenes ilustrativas de formato 9:16; todavía no contiene videos reproducibles. Las tres imágenes WebP suman aproximadamente 105 KB y se cargan de forma diferida al acercarse a la sección.
 
 ## Publicar en GitHub Pages
 

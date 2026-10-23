@@ -89,7 +89,7 @@ body{background:#111;color:var(--ink)}
 .site-footer strong{color:var(--gold-soft)}
 .footer-bottom{border-top-color:#5b4528}
 @media(max-width:820px){.main-nav{background:#181714}.main-nav a{border-bottom-color:#4a3822}.hero-copy{background:linear-gradient(to bottom,transparent,rgba(12,12,12,.76) 30%,rgba(12,12,12,.96))}}
-/* Vista previa opcional de tarjetas verticales; no se carga en la portada normal. */
+/* Tarjetas verticales de muestra para la sección de videos. */
 .reels-section{background:#141310;border-bottom:1px solid #665033;padding:94px max(4%,calc((100vw - 1300px)/2))}
 .reels-layout{display:grid;grid-template-columns:minmax(225px,315px) minmax(0,1fr);gap:44px;align-items:center}
 .reels-intro .eyebrow{color:var(--gold-soft)}
