@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4e7e0" />
+    <meta name="description" content="Lumière: una experiencia de belleza inspirada en cada detalle. Explora maquillaje, cuidado de la piel, perfumes, cabello y kits." />
+    <title>Lumière — Belleza que te inspira</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="assets/hero-portrait.webp" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <div class="benefits" aria-label="Beneficios de la tienda">
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h12v10H2zM14 9h4l4 4v3h-8zM6 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm12 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg> Envío gratis en compras mayores a $999</span>
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18v12H3zM2 6h20v3H2zM12 6v15M12 6c-4 0-6-1-6-3a2 2 0 0 1 2-2c2 0 4 3 4 5zm0 0c4 0 6-1 6-3a2 2 0 0 0-2-2c-2 0-4 3-4 5z"/></svg> Muestras de regalo en cada pedido</span>
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8 6 2h12l4 6-10 14L2 8zm0 0h20M6 2l3 6 3 14 3-14 3-6"/></svg> Productos 100% originales</span>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Lumière, ir al inicio">
+        <span class="brand-name">LUMIÈRE</span>
+        <span class="brand-tagline">BELLEZA QUE TE INSPIRA</span>
+      </a>
+      <button class="menu-toggle icon-button" type="button" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
+        <a href="#maquillaje">Maquillaje</a>
+        <a href="#piel">Cuidado de la piel</a>
+        <a href="#perfumes">Perfumes</a>
+        <a href="#cabello">Cabello</a>
+        <a href="#kits">Kits</a>
+        <a href="#inspiracion">Marcas</a>
+        <a href="#inspiracion">Ofertas</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button search-trigger" type="button" aria-label="Buscar categorías" aria-controls="search-panel" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
+        <button class="icon-button info-trigger" type="button" aria-label="Información sobre mi cuenta" data-message="La cuenta de clientes llegará cuando se integre la tienda en una próxima fase."><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3.2"/><path d="M4 21v-2.1a8 8 0 0 1 16 0V21z"/></svg></button>
+        <button class="icon-button bag-button info-trigger" type="button" aria-label="Información sobre la bolsa" data-message="La compra en línea estará disponible al incorporar catálogo, pagos e inventario."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16l1 13H3L4 8zM9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="bag-count" aria-hidden="true">0</span></button>
+      </div>
+    </header>
+
+    <div id="search-panel" class="search-panel" hidden>
+      <label for="category-search">¿Qué te gustaría explorar?</label>
+      <div class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input id="category-search" type="search" placeholder="Busca una categoría" autocomplete="off" /></div>
+      <p id="search-status" class="search-status" aria-live="polite"></p>
+    </div>
+
+    <main id="contenido">
+      <section id="inicio" class="hero" aria-labelledby="hero-title">
+        <div class="hero-visual" role="img" aria-label="Retrato editorial de belleza con flores rosadas"></div>
+        <div class="hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow">Descubre tu esencia</p>
+            <h1 id="hero-title">Belleza en <em>cada detalle</em></h1>
+            <p class="hero-description">Maquillaje, cuidado de la piel, perfumes y más.<br class="desktop-break" /> Todo lo que amas, en un solo lugar.</p>
+            <a class="button button-dark" href="#categorias">Explorar productos <span aria-hidden="true">→</span></a>
+          </div>
+          <img class="hero-products" src="assets/hero-products.webp" alt="Cosméticos y productos de belleza en tonos rosa y cobre" width="700" height="196" decoding="async" />
+        </div>
+      </section>
+
+      <section id="categorias" class="category-strip" aria-label="Explora por categoría">
+        <a class="category-tile" href="#maquillaje"><img src="assets/category-makeup.webp" alt="" width="120" height="90" loading="lazy" decoding="async" /><span><strong>Maquillaje</strong><small>Ver productos <span aria-hidden="true">→</span></small></span></a>
+        <a class="category-tile" href="#piel"><img src="assets/category-skincare.webp" alt="" width="120" height="90" loading="lazy" decoding="async" /><span><strong>Cuidado<br /> de la piel</strong><small>Ver productos <span aria-hidden="true">→</span></small></span></a>
+        <a class="category-tile" href="#perfumes"><img src="assets/category-perfume.webp" alt="" width="120" height="90" loading="lazy" decoding="async" /><span><strong>Perfumes</strong><small>Ver productos <span aria-hidden="true">→</span></small></span></a>
+        <a class="category-tile" href="#cabello"><img src="assets/category-hair.webp" alt="" width="120" height="90" loading="lazy" decoding="async" /><span><strong>Cabello</strong><small>Ver productos <span aria-hidden="true">→</span></small></span></a>
+        <a class="category-tile" href="#kits"><img src="assets/category-kits.webp" alt="" width="120" height="90" loading="lazy" decoding="async" /><span><strong>Kits</strong><small>Ver productos <span aria-hidden="true">→</span></small></span></a>
+      </section>
+
+      <section class="discover section-shell" aria-labelledby="discover-title">
+        <div class="section-heading"><p class="eyebrow">El universo Lumière</p><h2 id="discover-title">Encuentra tu próximo ritual</h2><p>Una mirada a las categorías que harán parte de nuestra selección.</p></div>
+        <div class="discover-grid">
+          <a id="maquillaje" class="discover-card" href="#contacto"><img src="assets/category-makeup.webp" alt="Polvos de maquillaje en tonos rosados" width="120" height="90" loading="lazy" decoding="async" /><span><b>01 / Maquillaje</b><strong>Color para expresarte</strong><small>Explorar la categoría <span aria-hidden="true">↗</span></small></span></a>
+          <a id="piel" class="discover-card" href="#contacto"><img src="assets/category-skincare.webp" alt="Textura cremosa de cuidado facial" width="120" height="90" loading="lazy" decoding="async" /><span><b>02 / Cuidado de la piel</b><strong>Tu momento de cuidado</strong><small>Explorar la categoría <span aria-hidden="true">↗</span></small></span></a>
+          <a id="perfumes" class="discover-card" href="#contacto"><img src="assets/category-perfume.webp" alt="Frasco de perfume rosado" width="120" height="90" loading="lazy" decoding="async" /><span><b>03 / Perfumes</b><strong>Una esencia propia</strong><small>Explorar la categoría <span aria-hidden="true">↗</span></small></span></a>
+          <a id="cabello" class="discover-card" href="#contacto"><img src="assets/category-hair.webp" alt="Cabello castaño brillante" width="120" height="90" loading="lazy" decoding="async" /><span><b>04 / Cabello</b><strong>Brillo en movimiento</strong><small>Explorar la categoría <span aria-hidden="true">↗</span></small></span></a>
+          <a id="kits" class="discover-card" href="#contacto"><img src="assets/category-kits.webp" alt="Caja de regalo rosada" width="120" height="90" loading="lazy" decoding="async" /><span><b>05 / Kits</b><strong>Detalles para regalar</strong><small>Explorar la categoría <span aria-hidden="true">↗</span></small></span></a>
+        </div>
+      </section>
+
+      <section id="inspiracion" class="editorial" aria-labelledby="editorial-title"><div class="editorial-inner"><p class="eyebrow">Muy pronto</p><h2 id="editorial-title">Un espacio para descubrir lo que te inspira.</h2><p>Esta es una vista previa visual. La selección de marcas, productos y ofertas se incorporará con el catálogo real.</p><a class="text-link" href="#contacto">Conoce el proyecto <span aria-hidden="true">→</span></a></div></section>
+    </main>
+
+    <footer id="contacto" class="site-footer"><div><span class="brand-name">LUMIÈRE</span><p>Belleza que te inspira.</p></div><div><strong>Explora</strong><a href="#categorias">Categorías</a><a href="#inspiracion">Nuestra inspiración</a></div><div><strong>Sobre esta vista previa</strong><p>Concepto visual basado en la imagen proporcionada. La tienda y el proceso de compra se desarrollarán en fases posteriores.</p></div><p class="footer-bottom">© <span id="year">2026</span> Lumière · Vista previa del proyecto</p></footer>
+
+    <dialog id="info-dialog" class="info-dialog"><form method="dialog"><button class="dialog-close icon-button" aria-label="Cerrar" value="close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4 20 20M20 4 4 20"/></svg></button><p class="eyebrow">Vista previa</p><h2>Estamos creando algo especial</h2><p id="dialog-message"></p><button class="button button-dark" value="close">Entendido</button></form></dialog>
+  </body>
+</html>
