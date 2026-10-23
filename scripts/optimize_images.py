@@ -33,7 +33,17 @@ for source_name, filename, size in (
         image.save(OUTPUT / filename, "WEBP", quality=80, method=6)
         print(f"{filename}: {(OUTPUT / filename).stat().st_size / 1024:.1f} KiB")
 
-# El logo se conserva sin redibujarlo ni recomprimir sus detalles.
+# Elimina solo el fondo negro; el arte y la tipografía originales permanecen.
 with Image.open(ROOT / "design" / "aurum-logo-original.png") as logo:
-    logo.convert("RGB").crop((88, 137, 325, 279)).save(OUTPUT / "aurum-logo.png", optimize=True)
-    print(f"aurum-logo.png: {(OUTPUT / 'aurum-logo.png').stat().st_size / 1024:.1f} KiB")
+    original = logo.convert("RGB").crop((88, 137, 325, 279))
+    transparent = Image.new("RGBA", original.size)
+    pixels = []
+    for red, green, blue in original.get_flattened_data():
+        alpha = max(0, min(255, round((max(red, green, blue) - 5) * 255 / 190)))
+        if alpha == 0:
+            pixels.append((0, 0, 0, 0))
+        else:
+            pixels.append(tuple(min(255, round(value * 255 / alpha)) for value in (red, green, blue)) + (alpha,))
+    transparent.putdata(pixels)
+    transparent.save(OUTPUT / "aurum-logo-transparent.png", optimize=True)
+    print(f"aurum-logo-transparent.png: {(OUTPUT / 'aurum-logo-transparent.png').stat().st_size / 1024:.1f} KiB")
