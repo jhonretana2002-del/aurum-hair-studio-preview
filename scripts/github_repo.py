@@ -95,7 +95,7 @@ def main():
     print(f"Pages: HTTP {status}")
     if status == 200:
         print("URL: " + pages.get("html_url", ""))
-        print("Estado: " + pages.get("status", ""))
+        print("Estado: " + (pages.get("status") or "pendiente"))
 
 
 if __name__ == "__main__":
