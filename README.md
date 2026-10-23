@@ -1,4 +1,4 @@
-# Lumière — vista previa
+# Aurum Hair Studio — vista previa
 
 Prototipo responsive basado en la imagen de referencia proporcionada. La página reproduce la dirección visual y mantiene texto, navegación, búsqueda y avisos de funciones futuras como elementos HTML accesibles. **No es todavía una tienda operativa**: no hay catálogo real, inventario, cuentas ni pagos.
 
@@ -18,7 +18,7 @@ El repositorio incluye `.github/workflows/pages.yml`. Al subir la rama `main`, a
 
 ## Imágenes y rendimiento
 
-Los recursos visibles se extrajeron de `design/reference.png` y se guardaron como WebP en `assets/`. Para regenerarlos:
+Las miniaturas se extrajeron de `design/reference.png`. El retrato y los productos se recrearon en alta resolución a partir de la referencia para ampliar el encuadre y eliminar las etiquetas de la marca anterior. Los archivos maestros están en `design/`; la página solo descarga las versiones WebP de `assets/`. Para regenerarlas:
 
 ```powershell
 & 'C:\Users\Jhon\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' scripts/optimize_images.py
