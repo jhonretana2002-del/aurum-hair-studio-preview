@@ -35,7 +35,7 @@ def api(method, path, token, data=None):
             "Accept": "application/vnd.github+json",
             "Authorization": "Bearer " + token,
             "X-GitHub-Api-Version": "2022-11-28",
-            "User-Agent": "lumiere-preview-setup",
+            "User-Agent": "aurum-preview-setup",
             **({"Content-Type": "application/json"} if body else {}),
         },
     )
@@ -52,7 +52,7 @@ def api(method, path, token, data=None):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("action", choices=["check", "create", "enable-pages", "pages-status", "rename"])
+    parser.add_argument("action", choices=["check", "create", "enable-pages", "pages-status"])
     parser.add_argument("--name", default="aurum-hair-studio-preview")
     args = parser.parse_args()
     token = credential()
@@ -62,15 +62,6 @@ def main():
     login = account["login"]
     print(f"Cuenta: {login}")
     repo_path = f"/repos/{login}/{args.name}"
-    if args.action == "rename":
-        status, repo = api("PATCH", f"/repos/{login}/lumiere-belleza-preview", token, {
-            "name": args.name,
-            "description": "Vista previa responsive de Aurum Hair Studio",
-        })
-        if status != 200:
-            raise RuntimeError(f"No se pudo renombrar el repositorio (HTTP {status}): {repo.get('message', '')}")
-        print("Renombrado: " + repo["html_url"])
-        return
     if args.action == "check":
         status, repo = api("GET", repo_path, token)
         print(f"Repositorio: {'existente' if status == 200 else 'no encontrado'} (HTTP {status})")
@@ -84,7 +75,7 @@ def main():
             return
         status, repo = api("POST", "/user/repos", token, {
             "name": args.name,
-            "description": "Vista previa responsive de Lumière basada en referencia visual",
+            "description": "Vista previa responsive de Aurum Hair Studio basada en referencia visual",
             "private": False,
             "auto_init": False,
         })
