@@ -14,6 +14,8 @@ Desde la carpeta del proyecto:
 
 Abre `http://localhost:8000/`. También puede servirse con cualquier servidor estático.
 
+Para revisar la propuesta de videos verticales, abre `http://localhost:8000/?preview=videos#video-preview`. Esta vista muestra imágenes ilustrativas de formato 9:16; todavía no contiene videos reproducibles. Las tres imágenes WebP suman aproximadamente 105 KB y solo se solicitan cuando se abre la propuesta.
+
 ## Publicar en GitHub Pages
 
 El repositorio incluye `.github/workflows/pages.yml`. Al subir la rama `main`, abre **Settings → Pages → Build and deployment** y elige **GitHub Actions**. El flujo publica la carpeta raíz; la dirección final tendrá la forma `https://USUARIO.github.io/NOMBRE-REPOSITORIO/`. Los enlaces a recursos son relativos para funcionar bajo esa ruta.

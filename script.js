@@ -45,3 +45,15 @@ document.querySelectorAll('.info-trigger').forEach(button => button.addEventList
   dialog.showModal();
 }));
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+if (new URLSearchParams(location.search).get('preview') === 'videos') {
+  const preview = document.querySelector('#video-preview');
+  preview.hidden = false;
+  preview.querySelectorAll('img[data-src]').forEach(image => { image.src = image.dataset.src; });
+  document.title = 'Aurum Hair Studio — Propuesta de videos verticales';
+  if (location.hash === '#video-preview') {
+    window.addEventListener('load', () => {
+      setTimeout(() => preview.scrollIntoView({ behavior: 'instant', block: 'start' }), 100);
+    }, { once: true });
+  }
+}
