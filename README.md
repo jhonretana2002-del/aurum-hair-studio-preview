@@ -18,7 +18,7 @@ El repositorio incluye `.github/workflows/pages.yml`. Al subir la rama `main`, a
 
 ## Imágenes y rendimiento
 
-Las miniaturas se extrajeron de `design/reference.png`. El retrato y los productos se recrearon en alta resolución a partir de la referencia para ampliar el encuadre y eliminar las etiquetas de la marca anterior. Los archivos maestros están en `design/`; la página solo descarga las versiones WebP de `assets/`. Para regenerarlas:
+Las miniaturas se extrajeron de `design/reference.png`. La portada es una sola escena panorámica, creada a partir de la composición de referencia, con una versión WebP para escritorio y otra más pequeña para móvil. El archivo maestro está en `design/panorama-master.png`; la página solo descarga la versión correspondiente a la pantalla. Para regenerar los recursos:
 
 El logo de `assets/aurum-logo-transparent.png` procede de `design/aurum-logo-original.png`, proporcionado por el usuario. Solo se retiró el fondo negro; se mantienen la forma y tipografía originales.
 

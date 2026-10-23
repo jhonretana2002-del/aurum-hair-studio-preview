@@ -25,12 +25,12 @@ with Image.open(SOURCE) as source:
         print(f"{filename}: {(OUTPUT / filename).stat().st_size / 1024:.1f} KiB")
 
 for source_name, filename, size in (
-    ("portrait-master.png", "hero-portrait.webp", (1200, 900)),
-    ("products-master.png", "hero-products.webp", (1200, 400)),
+    ("panorama-master.png", "hero-panorama.webp", (1983, 793)),
+    ("panorama-master.png", "hero-panorama-small.webp", (1000, 400)),
 ):
     with Image.open(ROOT / "design" / source_name) as master:
         image = master.convert("RGB").resize(size, Image.Resampling.LANCZOS)
-        image.save(OUTPUT / filename, "WEBP", quality=80, method=6)
+        image.save(OUTPUT / filename, "WEBP", quality=82 if size[0] > 1000 else 80, method=6)
         print(f"{filename}: {(OUTPUT / filename).stat().st_size / 1024:.1f} KiB")
 
 # Elimina solo el fondo negro; el arte y la tipografía originales permanecen.
