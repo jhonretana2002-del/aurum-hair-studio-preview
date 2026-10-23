@@ -2,6 +2,8 @@
 
 Prototipo responsive basado en la imagen de referencia proporcionada. La página reproduce la dirección visual y mantiene texto, navegación, búsqueda y avisos de funciones futuras como elementos HTML accesibles. **No es todavía una tienda operativa**: no hay catálogo real, inventario, cuentas ni pagos.
 
+La identidad visual usa dorado como acento principal, negro y gris oscuro en las superficies y blanco para los textos. La portada mantiene una sola escena panorámica en esa paleta.
+
 ## Vista previa local
 
 Desde la carpeta del proyecto:
